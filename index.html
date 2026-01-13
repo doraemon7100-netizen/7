@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEONGLIM | K-POP STRATEGY HUB</title>
+
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+
+    <style>
+        :root {
+            --neon-main: #00ff9d;
+            --neon-accent: #ff007a;
+            --bg-deep: #050505;
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            font-family: 'Pretendard', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            position: relative;
+            z-index: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background-image:
+                linear-gradient(to bottom, rgba(5,5,5,0.75), var(--bg-deep)),
+                radial-gradient(circle at 80% 20%, rgba(0,255,157,0.18), transparent 45%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 14px;
+            border: 1px solid var(--neon-main);
+            color: var(--neon-main);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 0.95;
+            margin: 0;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .highlight {
+            -webkit-text-stroke: 1px #ffffff;
+            color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #aaaaaa;
+            max-width: 620px;
+            margin-top: 32px;
+            line-height: 1.7;
+        }
+
+        /* ================= SECTION ================= */
+        section {
+            padding: 110px 10%;
+        }
+
+        h2.section-title {
+            font-size: 2.4rem;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h2.section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-main), transparent);
+        }
+
+        /* ================= GRID ================= */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .strategy-card {
+            position: relative;
+            padding: 42px;
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            transition: 0.4s cubic-bezier(.175,.885,.32,1.275);
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--neon-main);
+            background: rgba(0,255,157,0.06);
+        }
+
+        .strategy-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--neon-main);
+        }
+
+        .strategy-card p {
+            line-height: 1.7;
+            color: #cccccc;
+        }
+
+        .strategy-card .num {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 3rem;
+            font-weight: 900;
+            opacity: 0.1;
+        }
+
+        /* ================= DATA ================= */
+        .data-wrap {
+            margin-top: 110px;
+            padding: 60px;
+            background: #111;
+            border-left: 10px solid var(--neon-accent);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .data-item h4 {
+            margin: 0;
+            font-size: 3.4rem;
+            color: var(--neon-accent);
+        }
+
+        .data-item p {
+            margin: 0 0 10px;
+            color: #aaa;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            padding: 160px 10% 80px;
+            text-align: center;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 26px 64px;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .copyright {
+            margin-top: 90px;
+            font-size: 0.8rem;
+            color: #444;
+        }
+
+        /* ================= MOBILE ================= */
+        @media (max-width: 768px) {
+            .hero, section, footer {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+            .data-wrap {
+                padding: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <span class="label">TRADING THE CULTURE</span>
+        <h1>
+            CHEONGLIM<br>
+            <span class="highlight">K-POP</span><br>
+            ACADEMY
+        </h1>
+        <p class="hero-desc">
+            목회적 헌신, 트레이더의 분석력, 그리고 전문가의 공간 미학이 결합된<br>
+            대한민국 유일의 글로벌 퍼포먼스 인큐베이팅 전략 허브.
+        </p>
+    </section>
+
+    <!-- CORE STRATEGY -->
+    <section>
+        <h2 class="section-title">CORE STRATEGY</h2>
+
+        <div class="grid-container">
+            <div class="strategy-card">
+                <span class="num">01</span>
+                <h3>Spatial Logic</h3>
+                <p>
+                    인테리어 전문가의 설계로
+                    무대 잔상과 동선까지 계산된 퍼포먼스 공간 구축
+                </p>
+            </div>
+
+            <div class="strategy-card">
+                <span class="num">02</span>
+                <h3>Market Analysis</h3>
+                <p>
+                    글로벌 엔터테인먼트 시장 흐름을 반영한
+                    실전 오디션 포트폴리오 설계
+                </p>
+            </div>
+
+            <div class="strategy-card">
+                <span class="num">03</span>
+                <h3>Spiritual Growth</h3>
+                <p>
+                    청림교회의 멘토링을 통해
+                    아티스트의 인성과 내면을 함께 성장
+                </p>
+            </div>
+        </div>
+
+        <div class="data-wrap">
+            <div class="data-item">
+                <p>GLOBAL NETWORK</p>
+                <h4>24+</h4>
+            </div>
+
+            <div class="data-item">
+                <p>PERFORMANCE GROWTH</p>
+                <h4>150%</h4>
+            </div>
+
+            <div class="data-item" style="max-width:420px;">
+                <p style="line-height:1.8;">
+                    우리는 동작을 가르치지 않습니다.<br>
+                    시장 가치를 높이는 <b>퍼포먼스 자산</b>을 설계합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="color:#666; margin-bottom:48px;">
+            Ready to Invest in Your Vision?
+        </p>
+        <a href="#contact" class="cta-btn">PROJECT START</a>
+
+        <div class="copyright">
+            © 2026 CHEONGLIM ACADEMY · ARCHITECTED BY EXPERTS
+        </div>
+    </footer>
+
+</body>
+</html>
